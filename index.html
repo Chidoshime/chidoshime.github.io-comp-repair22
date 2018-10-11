@@ -463,8 +463,11 @@
         </div>
       </section>
 
-<a class="dg-widget-link" href="http://2gis.ru/barnaul/firm/563478234678209/center/83.778018,53.342077/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Барнаула</a><div class="dg-widget-link"><a href="http://2gis.ru/barnaul/firm/563478234678209/photos/563478234678209/center/83.778018,53.342077/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.ru/barnaul/center/83.778018,53.342077/zoom/16/routeTab/rsType/bus/to/83.778018,53.342077╎Международный институт экономики, менеджмента и информационных систем, АлтГУ?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Международный институт экономики, менеджмента и информационных систем, АлтГУ</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":53.342077,"lon":83.778018,"zoom":16},"opt":{"city":"barnaul"},"org":[{"id":"563478234678209"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
-      <!-- Section-->
+	    <div class="container">
+	<div id="map" style="width:100%; height:400px"></div>
+</div>
+	    
+ <!-- Section-->
       <!-- Subscribe to Our Newsletter-->
      <!--  <section class="section parallax-container" data-parallax-img="images/bg-forms-1.jpg">
         <div class="parallax-content section-md context-dark text-md-left">
@@ -566,7 +569,22 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-	
+	<script src="https://maps.api.2gis.ru/2.0/loader.js?lazy=true"></script>
+	        <script type="text/javascript">
+            var map;
+            DG.then(function () {
+                map = DG.map('map', {
+                    center: [53.34224241396088, 83.7780261039734],
+                    zoom: 16,
+                    scrollWheelZoom: false
+                });
+                //DG.marker([53.34224241396088, 83.7780261039734]).addTo(map).bindPopup('Вы кликнули по мне!');
+                DG.popup()
+                          .setLatLng(map.getCenter())
+                          .setContent('Алтайский Государственный Университет, МИЭМИС <br>пр. Социалистический 68')
+                          .openOn(map);
+            });      
+        </script>
 	<!--LIVEDEMO_00 -->
 
 	<!-- <script type="text/javascript">
