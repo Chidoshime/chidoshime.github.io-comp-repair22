@@ -1,2 +1,2 @@
 User-agent: *
-Allow: /
+Sitemap: http://pchelp22.ru/sitemap.xml
